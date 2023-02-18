@@ -18,3 +18,4 @@ Druhý argument je název souboru .csv, který se vám následně vytvoří.
 Příklad spouštění souboru main.py vyžaduje dva povinné argumenty (je potřeba argument 1 a 2 zapsat do uvozovek):
 PS C:\Projekty Engeto\Elections_scraper> Python main.py "https://www.volby.cz/pls/ps2017nss/ps32?xjazyk=CZ&xkraj=11&xnumnuts=6202" "výsledky_voleb_Brno.csv"
 
+Výstupem následně bude vámi pojmenovaný soubor "výsledky_voleb_Brno.csv", který zobrazí tabulku s výsledky daného města.
