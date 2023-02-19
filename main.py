@@ -12,7 +12,6 @@ import html
 from requests import get
 from bs4 import BeautifulSoup as bs
 
-
 # Scraper pro informace -->> vypíše mi to ze zvolené stránky kódy a města 
 def scraper_city_info(web: str,) -> dict: 
     """ Get city Id and names """
@@ -106,6 +105,3 @@ with open(sys.argv[2], mode="w", encoding='utf-8', newline='') as new:
     writer.writerow(headers)
     for line in all_city_information:
         writer.writerow(line)
-
-    
-# Zapisuj přes argv stránku z výběru X a jméno souboru.csv
