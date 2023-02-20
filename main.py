@@ -95,7 +95,7 @@ else:
 
 with open(sys.argv[2], mode="w", encoding='utf-8', newline='') as new:
     writer = csv.writer(new, delimiter=';')
-    print(f"Zapisuji data do souboru {sys.argv[2]}")
+    print(f"Vytvářím soubor {sys.argv[2]} a zapisuji do něj data")
     writer.writerow(headers)
     for line in all_city_information:
         writer.writerow(line)

@@ -6,11 +6,13 @@ Jedná se o projekt, který z stránek https://www.volby.cz/pls/ps2017nss/ps3?xj
 
 
 Instalace potřebných knihoven
-Je potřeba nainstalovat, pokud ještě nemáte, knihovny bs4 (BeautifulSoup) a knihovnu requests. Nicméně knihovny použité v kódu jsou uloženy v souboru requirements.txt.
+
+Je potřeba nainstalovat tyto knihovny, pokud ještě nemáte, knihovny bs4 (BeautifulSoup) a knihovnu requests. Nicméně knihovny použité v kódu jsou uloženy v souboru requirements.txt.
 Po vytvoření Virtuálního prostředí a aktivaci stáhněte knihovny pomocí příkazové řádky a to zadáním "pip install bs4" a "pip install requests" (bez uvozovek). 
 
 
 Spouštění souboru
+
 Soubort se spouští přes příkazovou řádku, kdy je potřeba zadat dva argumenty. 
 První argument je URL adresa daného města, které chcete vyscrapovat. 
 Druhý argument je název souboru .csv, který se vám následně vytvoří. 
