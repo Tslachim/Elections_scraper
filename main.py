@@ -12,8 +12,30 @@ import html
 from requests import get
 from bs4 import BeautifulSoup as bs
 
+if len(sys.argv) != 3:
+    print("Program musí být spuštěn s dvěma argumenty, adresou webové stránky a názvem výstupního souboru.")
+    sys.exit()
+else:
+    print("Kontroluji zadané argumenty...")
+
+if not sys.argv[1].startswith("https://www.volby.cz/pls/ps2017nss/"):
+    print("První argument musí být platnou adresou webové stránky.")
+    sys.exit()
+
+if not sys.argv[2].endswith(".csv"):
+    print("Druhý argument musí být název souboru s příponou .csv.")
+    sys.exit()
+else:
+    print("Byl zadán správný typ pro vytvoření souboru...")
+
 response = get(sys.argv[1])
 soup = bs(response.text, features="html.parser")
+
+if response.status_code < 200 or response.status_code > 299:  # kontrola kódu HTTP odpovědi
+    print(f"Chyba při načítání stránky: {response.status_code}, pravděpodobně je zadána nesprávná adresa")
+    sys.exit()
+else: 
+    print("Webová stránka se zdá být v pořádku...")
 
 def scraper_city_info(soup) -> dict:                                       # Scraper pro informace -->> vypíše mi to ze zvolené stránky kódy a města 
     """ Get city Id and names """
@@ -99,3 +121,5 @@ with open(sys.argv[2], mode="w", encoding='utf-8', newline='') as new:
     writer.writerow(headers)
     for line in all_city_information:
         writer.writerow(line)
+    
+print(f"Váš nový soubor {sys.argv[2]} je vytvořen, program je ukonce.")
